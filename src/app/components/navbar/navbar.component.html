@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand" routerLink="/dashboard">LMS</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/dashboard">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" *ngIf="isAdmin">
+                        Master Data
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" routerLink="/users" *ngIf="isAdmin">Users</a>
+                        <a class="dropdown-item" routerLink="/class" *ngIf="isAdmin">Class</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/enrollment" *ngIf="isStudent">Enrollment</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/myclass" *ngIf="isStudentLecturer">My Class</a>
+                </li>
+            </ul>
+            <div class="dropdown">
+                <div class="btn-group">
+                    <img src="http://localhost:8080/files/{{imgUrl}}" alt="Profile" style="border-radius: 100%; width: 3rem; height: 3rem;"
+                        class="img-thumbnail" data-bs-toggle="dropdown">
+                    <ul class="dropdown-menu dropdown-menu-lg-end">
+                        <li><a class="dropdown-item" routerLink="/users/profile">Profile</a></li>
+                        <li><a class="dropdown-item" routerLink="/users/change-password">Change Password</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" (click)="onLogout()">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,29 @@
+<pre>{{ learningInsertReqDto.value | json }}</pre>
+<div class="container mt-3 mt-md-4">
+    <a class="btn btn-secondary mb-4" routerLink="/myclass/{{id}}/learning">GO BACK</a>
+    <h1>Create Learning Form</h1>
+    <form [formGroup]="learningInsertReqDto" (ngSubmit)="onCreate()">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-2 gy-md-3 mt-3">
+                <label for="exampleFormControlInput1" class="form-label">Learning Topic <span
+                        class="text-danger">*</span></label>
+            </div>
+            <div class="col-12 col-md-10 gy-md-3">
+                <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="learningTopic">
+            </div>
+            <div class="col-12 col-md-2 gy-md-3 mt-3">
+                <label for="exampleFormControlInput3" class="form-label">Learning Date <span
+                        class="text-danger">*</span></label>
+            </div>
+            <div class="col-12 col-md-10 gy-md-3">
+                <input class="form-control" type="datetime-local" id="exampleFormControlInput3" formControlName="learningDate">
+            </div>
+            <div class="col-12 mb-4">
+                <div class="d-grid gap-2 d-block d-md-block mt-4">
+                    <button class="btn btn-danger me-2" type="reset">Reset</button>
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

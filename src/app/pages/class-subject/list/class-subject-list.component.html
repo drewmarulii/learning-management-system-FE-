@@ -1,0 +1,57 @@
+<div class="container mt-3 mt-md-4">
+    <a class="btn btn-primary mb-4" routerLink="new">CREATE CLASS</a>
+    <h1 class="mb-4">Class List</h1>
+    <div class="table-responsive">
+        <table class="table caption-top">
+            <thead>
+                <tr>
+                    <th scope="col">No.</th>
+                    <th scope="col">Photo</th>
+                    <th scope="col">Class Code</th>
+                    <th scope="col">Class Name</th>
+                    <th scope="col">Teacher Name</th>
+                    <th scope="col">Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let c of classes; let i=index">
+                    <th scope="row">{{ i+1 }}</th>
+                    <td>
+                        <div class="btn-group">
+                            <img src="" alt="Profile Picture" style="border-radius: 100%; width: 3rem; height: 3rem;"
+                                class="img-thumbnail">
+                        </div>
+                    </td>
+                    <td>{{ c.classCode }}</td>
+                    <td>{{ c.className }}</td>
+                    <td>{{ c.teacherName }}</td>
+                    <td>
+                        <a class="btn btn-danger me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">REMOVE</a>
+                        <a class="btn btn-secondary" routerLink="update/1">UPDATE</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Remove Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Removing Class</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                This action will delete data. Are you sure?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                <form>
+                    <button type="submit" class="btn btn-danger">Yes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+<pre>{{ studentRegistrationReqDto.value | json }}</pre>
+<div class="position-absolute top-50 start-50 translate-middle">
+    <div class="container mt-3 mt-md-4">
+        <h1>Registration</h1>
+        <form [formGroup]="studentRegistrationReqDto" (ngSubmit)="onCreate()">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-2 gy-md-3 mt-3">
+                    <label for="exampleFormControlInput1" class="form-label">Full Name <span
+                            class="text-danger">*</span></label>
+                </div>
+                <div class="col-12 col-md-10 gy-md-3">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="userFullName">
+                </div>
+                <div class="col-12 col-md-2 gy-md-3 mt-3">
+                    <label for="exampleFormControlInput2" class="form-label">Gender <span
+                            class="text-danger">*</span></label>
+                </div>
+                <div class="col-12 col-md-10 gy-md-3">
+                    <div class="d-flex flex-row">
+                        <div class="p-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="userGender"
+                                    id="flexRadioDefault1" value="Male" formControlName="userGender">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Male
+                                </label>
+                            </div>
+                        </div>
+                        <div class="p-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="userGender"
+                                    id="flexRadioDefault2" value="Female" formControlName="userGender">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Female
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-2 gy-md-3 mt-3">
+                    <label for="floatingTextarea" class="form-label">Address <span class="text-danger">*</span></label>
+                </div>
+                <div class="col-12 col-md-10">
+                    <div class="form-floating">
+                        <textarea class="form-control" id="floatingTextarea" formControlName="userAddress"></textarea>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-2 gy-md-3 mt-3">
+                    <label for="exampleFormControlInput3" class="form-label">Picture <span
+                            class="text-danger">*</span></label>
+                </div>
+                <div class="col-12 col-md-10 gy-md-3">
+                    <input class="form-control" type="file" id="exampleFormControlInput3" (change)="fileUpload($event)">
+                </div>
+
+                <div class="col-12 col-md-2 gy-md-3 mt-3">
+                    <label for="exampleFormControlInput4" class="form-label">Email <span
+                            class="text-danger">*</span></label>
+                </div>
+                <div class="col-12 col-md-10 gy-md-3">
+                    <input type="email" class="form-control" id="exampleFormControlInput4" formControlName="userEmail">
+                </div>
+                <div class="col-12 mb-4">
+                    <div class="d-flex justify-content-between">
+                        <div class="d-grid gap-2 d-block d-md-block mt-4">
+                            <a class="btn btn-secondary me-2" type="button" routerLink="/login">Cancel</a>
+                            <button class="btn btn-primary" type="submit">Submit</button>
+                        </div>
+                        <div class="d-grid gap-2 d-block d-md-block mt-4">
+                            <span class="ms-4">Have an Account? <a routerLink="/login">Login</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

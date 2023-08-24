@@ -1,0 +1,77 @@
+<pre>{{ userInsertReqDto.value | json }}</pre>
+<div class="container mt-3 mt-md-4">
+    <a class="btn btn-secondary mb-4" routerLink="/users">GO BACK</a>
+    <h1>Create User Form</h1>
+    <form [formGroup]="userInsertReqDto" (ngSubmit)="onCreate()">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-2 gy-md-3 mt-3">
+                <label for="exampleFormControlInput1" class="form-label">Full Name <span
+                        class="text-danger">*</span></label>
+            </div>
+            <div class="col-12 col-md-10 gy-md-3">
+                <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="userFullName">
+            </div>
+            <div class="col-12 col-md-2 gy-md-3 mt-3">
+                <label for="exampleFormControlInput2" class="form-label">Gender <span
+                        class="text-danger">*</span></label>
+            </div>
+            <div class="col-12 col-md-10 gy-md-3">
+                <div class="d-flex flex-row">
+                    <div class="p-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="userGender" id="flexRadioDefault1" value="Male" formControlName="userGender">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Male
+                            </label>
+                        </div>
+                    </div>
+                    <div class="p-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="userGender" id="flexRadioDefault2" value="Female" formControlName="userGender">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Female
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-2 gy-md-3 mt-3">
+                <label for="floatingTextarea" class="form-label">Address <span class="text-danger">*</span></label>
+            </div>
+            <div class="col-12 col-md-10">
+                <div class="form-floating">
+                    <textarea class="form-control" id="floatingTextarea" formControlName="userAddress"></textarea>
+                </div>
+            </div>
+            <div class="col-12 col-md-2 gy-md-3 mt-3">
+                <label for="exampleFormControlInput3" class="form-label">Profile Picture <span
+                        class="text-danger">*</span></label>
+            </div>
+            <div class="col-12 col-md-10 gy-md-3">
+                <input class="form-control" type="file" id="exampleFormControlInput3" (change)="fileUpload($event)">
+            </div>
+            <div class="col-12 col-md-2 gy-md-3 mt-3">
+                <label for="exampleFormControlInput4" class="form-label">Email <span
+                        class="text-danger">*</span></label>
+            </div>
+            <div class="col-12 col-md-10 gy-md-3">
+                <input type="email" class="form-control" id="exampleFormControlInput4" formControlName="userEmail">
+            </div>
+            <div class="col-12 col-md-2 gy-md-3 mt-3">
+                <label for="exampleFormControlInput6" class="form-label">Role <span class="text-danger">*</span></label>
+            </div>
+            <div class="col-12 col-md-10 gy-md-3">
+                <select class="form-select" aria-label="Default select example" id="exampleFormControlInput6" formControlName="roleId">
+                    <option selected disabled>Choose Role</option>
+                    <option *ngFor="let r of roles; let i=index" value="{{ r.id }}">{{ r.roleName }}</option>
+                </select>
+            </div>
+            <div class="col-12 mb-4">
+                <div class="d-grid gap-2 d-block d-md-block mt-4">
+                    <button class="btn btn-danger me-2" type="reset">Reset</button>
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

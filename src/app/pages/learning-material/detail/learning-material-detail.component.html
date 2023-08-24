@@ -1,0 +1,26 @@
+<div class="container mt-3 mt-md-4">
+    <a class="btn btn-secondary mb-4" routerLink="/myclass/{{classId}}/learning/detail/{{learningId}}">GO BACK</a>
+    <div class="d-flex justify-content-between">
+        <h1>Material : {{ material?.materialName }}</h1>
+    </div>
+
+    <section>
+        <h5>Material Text</h5>
+        <p>
+            {{ material?.materialText}}
+        </p>
+    </section>
+
+    <section>
+        <h5>Material File</h5>
+        <div class="d-flex">
+            <div class="card p-2" style=" width: 10rem; height: 10rem;">
+                <a href="">
+                    <img src="" alt="Material Attachment"
+                        style=" width: 10rem; height: 10rem;" class="img-thumbnail">
+                    <p>Material-1.pdf</p>
+                </a>
+            </div>
+        </div>
+    </section>
+</div>

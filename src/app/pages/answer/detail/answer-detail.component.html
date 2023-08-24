@@ -1,0 +1,193 @@
+<div class="container mt-3 mt-md-4">
+    <a class="btn btn-secondary mb-4" routerLink="/answer/TSK-001">GO BACK</a>
+    <div class="d-flex justify-content-between">
+        <h1>Task Answer</h1>
+        <div>
+            <a class="btn btn-info mb-4" data-bs-toggle="modal" data-bs-target="#exampleModal1">RESULT</a>
+            <a class="btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#exampleModal">ADD REVIEW</a>
+        </div>
+    </div>
+    <p class="mb-0"><strong>Task Code :</strong> TSK-001</p>
+    <p><strong>Student Name :</strong> Andrew Maruli</p>
+    <section>
+        <hr>
+        <h5>Task Essay</h5>
+        <div class="container">
+            <div class="mt-2">
+                <h5>Question 1</h5>
+                <p>
+                    Explain About Data Structure & Algorithm in your own words. Do not copy & paste from google.
+                </p>
+                <div class="form-floating">
+                    <textarea class="form-control" id="exampleFormControlInput3" rows="3" style="height: 100%;"
+                        readonly>
+A data structure is a specialized format for organizing, processing, retrieving and storing data. There are several basic and advanced types of data structures, all designed to arrange data to suit a specific purpose.
+                        </textarea>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <h5>Question 2</h5>
+                <p>
+                    Explain briefly about the concept of OOP and give 5 example with its details
+                </p>
+                <div class="form-floating">
+                    <textarea class="form-control" id="exampleFormControlInput3" rows="3" style="height: 100%;"
+                        readonly>
+Object-oriented programming (OOP) is a computer programming model that organizes software design around data, or objects, rather than functions and logic. An object can be defined as a data field that has unique attributes and behavior.
+                        </textarea>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <h5>Question 3</h5>
+                <p>
+                    Explain Briefly about the component of HyperText Markup Language
+                </p>
+                <div class="form-floating">
+                    <textarea class="form-control" id="exampleFormControlInput3" rows="3" style="height: 100%;"
+                        readonly>
+The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser. 
+                        </textarea>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section class="mt-2">
+        <h5>Task File</h5>
+        <div class="container">
+            <div class="mt-2">
+                <div class="d-flex">
+                    <div class="p-2">
+                        <a href="">
+                            <img src="../../assets/img/pdffile.png" alt="Task Attachment"
+                                style=" width: 10rem; height: 10rem;" class="img-thumbnail">
+                            <p>Task-File-1.pdf</p>
+                        </a>
+                    </div>
+                    <div class="p-2">
+                        <a href="">
+                            <img src="../../assets/img/pdffile.png" alt="Task Attachment"
+                                style=" width: 10rem; height: 10rem;" class="img-thumbnail">
+                            <p>Task-File-2.pdf</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section>
+        <div class="row align-items-center">
+            <div class="col-12 col-md-2 gy-md-3 mt-3">
+                <label for="exampleFormControlInput3" class="form-label">Online Text</label>
+            </div>
+            <div class="col-12 col-md-10 gy-md-3">
+                <div class="form-floating">
+                    <textarea class="form-control" id="exampleFormControlInput3" rows="5" style="height: 100%;"
+                        readonly>
+A data structure is a specialized format for organizing, processing, retrieving and storing data. There are several basic and advanced types of data structures, all designed to arrange data to suit a specific purpose., A data structure is a specialized format for organizing, processing, retrieving and storing data. There are several basic and advanced types of data structures, all designed to arrange data to suit a specific purpose.  A data structure is a specialized format for organizing, processing, retrieving and storing data. There are several basic and advanced types of data structures, all designed to arrange data to suit a specific purpose.
+                            </textarea>
+                </div>
+            </div>
+            <div class="col-12 col-md-2 gy-md-3 mt-3">
+                <label for="exampleFormControlInput4" class="form-label">Files</label>
+            </div>
+            <div class="col-12 col-md-10 gy-md-3">
+                <div class="d-flex">
+                    <div class="p-2">
+                        <a href="">
+                            <img src="../../assets/img/pdffile.png" alt="Answer Attachment"
+                                style=" width: 10rem; height: 10rem;" class="img-thumbnail">
+                            <p>Answer-File-1.pdf</p>
+                        </a>
+                    </div>
+                    <div class="p-2">
+                        <a href="">
+                            <img src="../../assets/img/pdffile.png" alt="Answer Attachment"
+                                style=" width: 10rem; height: 10rem;" class="img-thumbnail">
+                            <p>Answer-File-2.pdf</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Create Review -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Create Review</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="row">
+                        <div class="col-12 col-md-3 gy-md-3">
+                            <label for="exampleFormControlInput1" class="form-label">Score <span
+                                    class="text-danger">*</span></label>
+                        </div>
+                        <div class="col-12 col-md-9 gy-md-3">
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                        </div>
+                        <div class="col-12 col-md-3 gy-md-3">
+                            <label for="exampleFormControlInput1" class="form-label">Notes <span
+                                    class="text-danger">*</span></label>
+                        </div>
+                        <div class="col-12 col-md-9 gy-md-3">
+                            <div class="form-floating">
+                                <textarea class="form-control" id="floatingTextarea" rows="3"
+                                    style="height: 100%;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <form>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Show Result -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">My Task Review</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="row">
+                        <div class="col-12 col-md-2 gy-md-3">
+                            <label for="exampleFormControlInput1" class="form-label">Score :</label>
+                        </div>
+                        <div class="col-12 col-md-10 gy-md-3">
+                            <p class="text-success h2">89</p>
+                        </div>
+                        <div class="col-12 col-md-2 gy-md-3">
+                            <label for="exampleFormControlInput1" class="form-label">Notes :</label>
+                        </div>
+                        <div class="col-12 col-md-10 gy-md-3">
+                            <p>Keep up the good work!</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

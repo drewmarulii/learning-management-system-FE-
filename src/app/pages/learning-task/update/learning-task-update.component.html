@@ -1,0 +1,59 @@
+<div class="container mt-3 mt-md-4">
+    <a class="btn btn-secondary mb-4" routerLink="/learning/detail/1">GO BACK</a>
+    <h1>Update Learning Task Form</h1>
+    <form>
+        <div class="row align-items-center">
+            <div class="col-12 col-md-2 gy-md-3 mt-3">
+                <label for="exampleFormControlInput1" class="form-label">Start Date & Time <span
+                        class="text-danger">*</span></label>
+            </div>
+            <div class="col-12 col-md-10 gy-md-3">
+                <input type="datetime-local" class="form-control" id="exampleFormControlInput1">
+            </div>
+            <div class="col-12 col-md-2 gy-md-3 mt-3">
+                <label for="exampleFormControlInput2" class="form-label">End Date & Time <span
+                        class="text-danger">*</span></label>
+            </div>
+            <div class="col-12 col-md-10 gy-md-3">
+                <input type="datetime-local" class="form-control" id="exampleFormControlInput2">
+            </div>
+            <div class="col-12 col-md-2 gy-md-3 mt-3">
+                <label for="exampleFormControlInput3" class="form-label">Question <span
+                        class="text-danger">*</span></label>
+            </div>
+            <div class="col-12 col-md-10 gy-md-3">
+                <button type="button" class="btn btn-success">ADD</button>
+            </div>
+            <div class="col-12 col-md-10 offset-md-2 gy-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-md-2">
+                            <p><strong>Question #1</strong></p>
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </div>
+                        <select class="form-select" aria-label="Default select example" id="exampleFormControlInput6">
+                            <option selected disabled>Choose Question Type</option>
+                            <option value="1">Essay</option>
+                            <option value="2">File</option>
+                        </select>
+
+                        <p>Essay</p>
+                        <div class="form-floating">
+                            <textarea class="form-control" id="exampleFormControlInput3" rows="2"
+                                style="height: 100%;"></textarea>
+                        </div>
+
+                        <p>Files</p>
+                        <input class="form-control" type="file" id="exampleFormControlInput4">
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mb-4">
+                <div class="d-grid gap-2 d-block d-md-block mt-4">
+                    <button class="btn btn-danger" type="danger">Reset</button>
+                    <button class="btn btn-primary" type="submit">Save</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

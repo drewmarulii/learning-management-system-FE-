@@ -1,0 +1,49 @@
+<div class="container mt-3 mt-md-4">
+    <a class="btn btn-secondary mb-4" routerLink="/myclass">GO BACK</a>
+    <div class="d-flex justify-content-between">
+        <h1>Learning List</h1>
+        <a class="btn btn-primary mb-4" routerLink="/myclass/{{class}}/learning/new" *ngIf="isLecturer">CREATE
+            LEARNING</a>
+    </div>
+
+    <div class="list-group">
+        <a routerLink="/myclass/{{class}}/learning/detail/{{l.id}}" class="list-group-item list-group-item-action p-3"
+            *ngFor="let l of learnings; let i=index;">
+            <div class="row">
+                <div class="col-1">
+                    {{ i+1 }}
+                </div>
+                <div class="col-3">
+                    {{ l.learningCode }}
+                </div>
+                <div class="col-5">
+                    {{ l.learningTopic }}
+                </div>
+                <div class="col-3">
+                    {{ l.learningDate }}
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- Remove Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Removing Learning</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                This action will delete data. Are you sure?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                <form>
+                    <button type="submit" class="btn btn-danger">Yes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

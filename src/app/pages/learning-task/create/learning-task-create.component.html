@@ -1,0 +1,70 @@
+<pre>{{ learningTaskInsertReqDto.value | json }}</pre>
+<div class="container mt-3 mt-md-4">
+    <a class="btn btn-secondary mb-4" routerLink="/myclass/{{classId}}/learning/detail/{{learningId}}">GO BACK</a>
+    <h1>Create Learning Task Form</h1>
+    <form [formGroup]="learningTaskInsertReqDto" (ngSubmit)="onCreate()">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-2 gy-md-3 mt-3">
+                <label for="exampleFormControlInput1" class="form-label">Start Date & Time <span
+                        class="text-danger">*</span></label>
+            </div>
+            <div class="col-12 col-md-10 gy-md-3">
+                <input type="datetime-local" class="form-control" id="exampleFormControlInput1"
+                    formControlName="startDateTime">
+            </div>
+            <div class="col-12 col-md-2 gy-md-3 mt-3">
+                <label for="exampleFormControlInput2" class="form-label">End Date & Time <span
+                        class="text-danger">*</span></label>
+            </div>
+            <div class="col-12 col-md-10 gy-md-3">
+                <input type="datetime-local" class="form-control" id="exampleFormControlInput2"
+                    formControlName="endDateTime">
+            </div>
+            <div class="col-12 col-md-2 gy-md-3 mt-3">
+                <label for="exampleFormControlInput2" class="form-label">Questions <span
+                        class="text-danger">*</span></label>
+            </div>
+
+            <div class="col-12 col-md-10 gy-md-3">
+                <button type="button" class="btn btn-success" (click)="onAdd()">ADD</button>
+            </div>
+
+            <!-- start  -->
+            <div class="col-12 col-md-10 offset-md-2 gy-md-3">
+                <div *ngFor="let q of questions.controls; let i=index" formArrayName="questions">
+                    <div class="card mt-4" [formGroupName]="i">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-md-2">
+                                <p><strong>Question #{{ i+1 }}</strong></p>
+                                <button type="button" class="btn btn-danger">Delete</button>
+                            </div>
+                            <select class="form-select" aria-label="Default select example"
+                                id="exampleFormControlInput6" formControlName="typeId">
+                                <option selected disabled>Choose Question Type</option>
+                                <option value="1">Essay</option>
+                                <option value="2">File</option>
+                            </select>
+                            
+                            <p>Essay</p>
+                            <div class="form-floating">
+                                <textarea class="form-control" id="exampleFormControlInput3" rows="2"
+                                    style="height: 100%;" formControlName="questionDetail"></textarea>
+                            </div>
+
+                            <p>Files</p>
+                            <input class="form-control" type="file" id="exampleFormControlInput4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end -->
+
+            <div class="col-12 mb-4">
+                <div class="d-grid gap-2 d-block d-md-block mt-4">
+                    <button class="btn btn-danger me-2" type="reset">Reset</button>
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

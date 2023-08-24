@@ -1,0 +1,50 @@
+<div class="container mt-3 mt-md-4">
+    <h1>My Profile</h1>
+    <div class="row mt-md-4">
+        <div class="col-12 col-md-2 d-flex justify-content-center justify-content-md-start">
+            <img src="http://localhost:8080/files/{{imgUrl}}" alt="Provider Logo" style="width: 12rem; height: 16rem;"
+                class="img-thumbnail mt-3 mt-md-0">
+        </div>
+        <div class="col-12 col-md-10 mt-4 mt-md-0">
+            <div class="row">
+                <div class="col-12 col-md-2">
+                    <p class="d-flex justify-content-center justify-content-md-start"><strong>User ID</strong></p>
+                </div>
+                <div class="col-12 col-md-10">
+                    <p class="d-flex justify-content-center justify-content-md-start">{{myProfile.userIdNumber}}</p>
+                </div>
+                <div class="col-12 col-md-2">
+                    <p class="d-flex justify-content-center justify-content-md-start"><strong>Full Name</strong></p>
+                </div>
+                <div class="col-12 col-md-10">
+                    <p class="d-flex justify-content-center justify-content-md-start">{{myProfile.userFullname}}</p>
+                </div>
+                <div class="col-12 col-md-2">
+                    <p class="d-flex justify-content-center justify-content-md-start"><strong>Gender</strong></p>
+                </div>
+                <div class="col-12 col-md-10">
+                    <p class="d-flex justify-content-center justify-content-md-start">{{myProfile.userGender}}</p>
+                </div>
+                <div class="col-12 col-md-2">
+                    <p class="d-flex justify-content-center justify-content-md-start"><strong>Address</strong></p>
+                </div>
+                <div class="col-12 col-md-10">
+                    <p class="d-flex justify-content-center justify-content-md-start">{{myProfile.userAddress}}</p>
+                </div>
+                <div class="col-12 col-md-2">
+                    <p class="d-flex justify-content-center justify-content-md-start"><strong>Email</strong></p>
+                </div>
+                <div class="col-12 col-md-10">
+                    <p class="d-flex justify-content-center justify-content-md-start">{{myProfile.userEmail}}</p>
+                </div>
+                <div class="col-12 col-md-2">
+                    <p class="d-flex justify-content-center justify-content-md-start"><strong>Role</strong></p>
+                </div>
+                <div class="col-12 col-md-10">
+                    <p class="d-flex justify-content-center justify-content-md-start">{{myProfile.roleName}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="btn btn-primary mt-2 mb-4" routerLink="/users/profile/update/1">Update Profile</a>
+</div>

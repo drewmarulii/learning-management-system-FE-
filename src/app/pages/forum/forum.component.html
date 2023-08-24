@@ -1,0 +1,65 @@
+<div class="container mt-3 mt-md-4">
+    <a class="btn btn-secondary mb-4" routerLink="/myclass/{{classId}}/learning/detail/{{learningId}}">GO BACK</a>
+    <div>
+        <h1>Forum : {{ forum?.forumTitle }}</h1>
+        <h5>Description : {{ forum?.forumDescription }}</h5>
+    </div>
+
+    <div class="card mt-4">
+        <div class="card-header">
+            3 Replies
+        </div>
+        <div class="card-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- First Reply -->
+                        <div class="card bg-light mt-3" style="width: 80%;" *ngFor="let c of comments; let i=index;">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12 col-md-1">
+                                        <div class="btn-group">
+                                            <img src="" alt="photo"
+                                                style="border-radius: 100%; width: 3rem; height: 3rem;"
+                                                class="img-thumbnail">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-11">
+                                        <p class="mb-0"><strong> {{ c.userFullname }}</strong></p>
+                                        <small class="mt-0">{{ c.createdAt }}</small>
+                                        <p class="mt-3">
+                                            {{c.commentDesc}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <pre>{{ commentInsertReqDto.value | json }}</pre>
+        <form [formGroup]="commentInsertReqDto" (ngSubmit)="onCreate()">
+            <div class="row">
+                <div class="col-12 col-md-2">
+                    <label for="floatingTextarea" class="form-label">Comments</label>
+                </div>
+                <div class="col-12 col-md-10">
+                    <div class="form-floating">
+                        <textarea class="form-control" id="floatingTextarea" rows="3" style="height: 100%;" formControlName="commentDesc"></textarea>
+                    </div>
+                </div>
+                <div class="col-12 mb-4">
+                    <div class="d-grid gap-2 d-block d-md-block mt-4">
+                        <button class="btn btn-danger me-2" type="reset">Reset</button>
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

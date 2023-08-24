@@ -1,0 +1,38 @@
+<div class="position-absolute top-50 start-50 translate-middle">
+    <div>
+        <h1>Login</h1>
+        <form [formGroup]="loginReqDto" (ngSubmit)="onLogin()">
+            <div class="row">
+                <div class="col-12 gy-md-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email</label>
+                </div>
+                <div class="col-12 gy-md-3">
+                    <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="userEmail">
+                </div>
+                <div class="col-12 gy-md-3 mt-2">
+                    <label for="exampleFormControlInput2" class="form-label">Password</label>
+                </div>
+                <div class="col-12 gy-md-3">
+                    <input type="password" class="form-control" id="exampleFormControlInput2"
+                        formControlName="userPassword">
+                </div>
+                <div class="col-12 mb-4">
+                    <div class="d-flex justify-content-between">
+                        <div class="d-grid gap-2 d-block d-md-block mt-4">
+                            <button class="btn btn-primary" type="submit" [disabled]="loginReqDto.invalid"
+                                *ngIf="!loading">Login</button>
+
+                            <button class="btn btn-primary" type="button" disabled *ngIf="loading">
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                Loading...
+                            </button>
+                        </div>
+                        <div class="d-grid gap-2 d-block d-md-block mt-4">
+                            <span class="ms-4">Student Registration? <a routerLink="/register">Register</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

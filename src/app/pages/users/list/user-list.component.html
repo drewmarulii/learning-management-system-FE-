@@ -1,0 +1,94 @@
+<div class="container mt-3 mt-md-4">
+    <a class="btn btn-primary mb-4" routerLink="new">CREATE USER</a>
+    <h1>User List</h1>
+    <div class="table-responsive">
+        <table class="table caption-top">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Photo</th>
+                    <th scope="col">UID</th>
+                    <th scope="col">Full Name</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let u of users; let i=index;">
+                    <th scope="row">{{ i+1 }}</th>
+                    <td>
+                        <div class="btn-group">
+                            <img src="" alt="Profile Picture" style="border-radius: 100%; width: 3rem; height: 3rem;"
+                                class="img-thumbnail">
+                        </div>
+                    </td>
+                    <td>{{ u.userIdNumber }}</td>
+                    <td>{{ u.userFullname }}</td>
+                    <td>{{ u.userGender }}</td>
+                    <td>{{ u.userEmail }}</td>
+                    <td>{{ u.roleName }}</td>
+                    <td>
+                        <a class="btn btn-danger me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">REMOVE</a>
+                        <a class="btn btn-secondary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal2">IS ACTIVE</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Remove Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Removing User</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                This action will delete data. Are you sure?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                    <button type="submit" class="btn btn-danger">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- IsActive Change Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Is Active Status</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-3">
+                            <label for="exampleFormControlInput2" class="form-label">Is Active <span
+                                    class="text-danger">*</span></label>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <select class="form-select" aria-label="Default select example" id="exampleFormControlInput2">
+                                <option value="true">Activate</option>
+                                <option value="false">Non-Activate</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <form>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

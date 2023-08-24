@@ -1,0 +1,50 @@
+<div class="container mt-3 mt-md-4">
+    <a class="btn btn-secondary mb-4" routerLink="/learning/detail/1">GO BACK</a>
+    <h1>Answers List</h1>
+    <h5>Task Code: TSK-001</h5>
+    <div class="table-responsive">
+        <table class="table caption-top">
+            <thead>
+                <tr>
+                    <th scope="col">No.</th>
+                    <th scope="col">Student Name</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Notes</th>
+                    <th scope="col">Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Andrew Maruli</td>
+                    <td>89</td>
+                    <td>Keep up the Good work!</td>
+                    <td>
+                        <a class="btn btn-primary" routerLink="/answer/TSK-001/detail/1">REVIEW ANSWER</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Remove Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Removing User</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                This action will delete data. Are you sure?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                <form>
+                    <button type="submit" class="btn btn-danger">Yes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

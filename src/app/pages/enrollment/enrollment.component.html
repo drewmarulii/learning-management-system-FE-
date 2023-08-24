@@ -1,0 +1,16 @@
+<div class="container mt-3 mt-md-4">
+    <h1 class="mb-4">Unenrolled Class List</h1>
+    <div class="row align-items-center">
+        <div class="col-12 col-md-3 mt-2 mt-md-0" *ngFor="let c of classes; let i=index;">
+            <div class="card" style="width: 20rem; height: auto;">
+                <img class="card-img-top" src="http://localhost:8080/files/{{c.fileId}}"
+                    style="width: 20rem; height: 8rem;" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{ c.className }}</h5>
+                    <p class="card-text">Lecturer: {{ c.teacherName }}</p>
+                    <a class="btn btn-primary" (click)="onEnroll(c.id)">Enroll</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

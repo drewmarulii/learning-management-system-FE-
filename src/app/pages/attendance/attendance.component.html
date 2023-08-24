@@ -1,0 +1,33 @@
+<pre>{{ attendanceIsApprove.value | json}}</pre>
+<div class="container mt-3 mt-md-4">
+    <a class="btn btn-secondary mb-4" routerLink="/myclass/{{classId}}/learning/detail/{{learningId}}">GO BACK</a>
+    <div class="d-flex justify-content-between">
+        <h1>Learning Attendance List</h1>
+    </div>
+    <form [formGroup]="attendanceIsApprove" (ngSubmit)="onApprove()">
+        <div class="table-responsive">
+            <table class="table caption-top">
+                <thead>
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Student Name</th>
+                        <th scope="col">Attendace Date</th>
+                        <th scope="col">Is Approve</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let a of attendances; let i=index;">
+                        <th scope="row">{{ i+1 }}</th>
+                        <td>{{ a.studentName }}</td>
+                        <td>{{ a.attendanceDate }}</td>
+                        <td>
+                            <button class="btn btn-primary" type="button" (click)="getId(a.attendanceId)"
+                                [disabled]="a.isApprove">Approve</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

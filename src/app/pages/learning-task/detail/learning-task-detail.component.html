@@ -1,0 +1,88 @@
+<div class="container mt-3 mt-md-4">
+    <a class="btn btn-secondary mb-4" routerLink="/myclass/{{classId}}/learning/detail/{{learningId}}">GO BACK</a>
+    <div class="d-flex justify-content-between">
+        <h1>Task : {{ task?.taskCode }}</h1>
+        <div>
+            <a class="btn btn-warning mb-4" routerLink="/answer" *ngIf="isStudent">MY ANSWER</a>
+        </div>
+    </div>
+    <p>
+        <strong>Start: </strong> {{ task?.startDateTime }} |
+        <strong>End: </strong> {{ task?.endDateTime }}
+    </p>
+
+    <hr>
+    <section>
+        <h5>Task Essay</h5>
+        <div class="container">
+            <div class="col-12 mt-md-0">
+                <div *ngFor="let t of questions; let i=index;">
+                    <div class="mt-2">
+                        <p>
+                            <strong>Question {{ i+1 }}: </strong>{{ t.questionDetail }}
+                        </p>
+                        <div class="form-floating">
+                            <textarea class="form-control" id="exampleFormControlInput3" rows="3" style="height: 100%;"
+                                *ngIf="isStudent"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section class="mt-2">
+        <h5>Task File</h5>
+        <div class="container">
+            <div class="mt-2">
+                <div class="d-flex">
+                    <div class="p-2">
+                        <a href="" style=" width: 10rem; height: 10rem;">
+                            <img src="" alt="Task Attachment" style=" width: 10rem; height: 10rem;"
+                                class="img-thumbnail">
+                            <p>Task-File-1.pdf</p>
+                        </a>
+                    </div>
+                    <div class="p-2" style=" width: 10rem; height: 10rem;">
+                        <a href="">
+                            <img src="" alt="Task Attachment" style=" width: 10rem; height: 10rem;"
+                                class="img-thumbnail">
+                            <p>Task-File-2.pdf</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section *ngIf="isStudent">
+        <form>
+            <div class="row align-items-center">
+                <div class="col-12 col-md-2 gy-md-3 mt-3">
+                    <label for="exampleFormControlInput3" class="form-label">Online Text</label>
+                </div>
+                <div class="col-12 col-md-10 gy-md-3">
+                    <div class="form-floating">
+                        <textarea class="form-control" id="exampleFormControlInput3" rows="5"
+                            style="height: 100%;"></textarea>
+                    </div>
+                </div>
+                <div class="col-12 col-md-2 gy-md-3 mt-3">
+                    <label for="exampleFormControlInput4" class="form-label">Files</label>
+                </div>
+                <div class="col-12 col-md-10 gy-md-3">
+                    <input class="form-control" type="file" id="exampleFormControlInput4">
+                </div>
+
+                <div class="col-12 mb-4" *ngIf="isStudent">
+                    <div class="d-grid gap-2 d-block d-md-block mt-4">
+                        <a class="btn btn-danger me-2" type="button">Reset</a>
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+</div>

@@ -1,0 +1,39 @@
+<pre>{{ classInsertReqDto.value | json }}</pre>
+<div class="container mt-3 mt-md-4">
+    <a class="btn btn-secondary mb-4" routerLink="/class">GO BACK</a>
+    <h1>Create Class Form</h1>
+    <form [formGroup]="classInsertReqDto" (ngSubmit)="onCreate()">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-2 gy-md-3 mt-3">
+                <label for="exampleFormControlInput1" class="form-label">Class Name <span
+                        class="text-danger">*</span></label>
+            </div>
+            <div class="col-12 col-md-10 gy-md-3">
+                <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="className">
+            </div>
+            <div class="col-12 col-md-2 gy-md-3 mt-3">
+                <label for="exampleFormControlInput2" class="form-label">Class Picture <span
+                        class="text-danger">*</span></label>
+            </div>
+            <div class="col-12 col-md-10 gy-md-3">
+                <input class="form-control" type="file" id="exampleFormControlInput2" (change)="fileUpload($event)">
+            </div>
+            <div class="col-12 col-md-2 gy-md-3 mt-3">
+                <label for="exampleFormControlInput3" class="form-label">Teacher <span
+                        class="text-danger">*</span></label>
+            </div>
+            <div class="col-12 col-md-10 gy-md-3">
+                <select class="form-select" aria-label="Default select example" id="exampleFormControlInput3" formControlName="teacherId">
+                    <option selected disabled>Choose Teacher</option>
+                    <option *ngFor="let t of teachers; let i=index;" value="{{ t.id }}">{{ t.userFullname }}</option>
+                </select>
+            </div>
+            <div class="col-12 mb-4">
+                <div class="d-grid gap-2 d-block d-md-block mt-4">
+                    <button class="btn btn-danger me-2" type="reset">Reset</button>
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
